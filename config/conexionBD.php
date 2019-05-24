@@ -1,6 +1,6 @@
 <?php
 
-$db_servername = "db4free.net:3306;
+$db_servername = "db4free.net:3306";
 $db_username = "pitzzeria"; 
 $db_password = "pitzzeria"; 
 $db_name = "pitzzeriadb"; $
