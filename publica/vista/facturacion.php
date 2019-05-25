@@ -73,6 +73,16 @@
         </div>
         <div>
             <!--Datos Facturacion-->
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label id="fecha" for="fecha">Fecha</label>
+                            <label id="txtfecha" for="fecha"></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div>
             <!---->
