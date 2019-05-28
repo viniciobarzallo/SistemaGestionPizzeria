@@ -8,7 +8,7 @@
   
         
         <h1> Crear Pedido</h1>
-        <form id="formulario" name="formulario" method="post" action="guardar.php" enctype="multipart/form-data">
+        <form id="formulario" name="formulario" method="post" action="guardarPedidos.php" enctype="multipart/form-data">
         <label> Usuario: </label>
         <input type="text" name="usuario" id="usuario" value="">(*)<br>
         <label> Producto: </label>
