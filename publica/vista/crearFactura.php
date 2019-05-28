@@ -18,7 +18,7 @@
                         <a href="">Mis pedidos</a>
                     </li>
                     <li>
-                        <a href="">Mis facturas</a>
+                        <a href="./listarFacturaCliente.html">Mis facturas</a>
                     </li>
 
                 </ul>
