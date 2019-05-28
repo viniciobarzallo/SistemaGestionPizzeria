@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <head>
        <title>Facturacion</title>
+       <link rel="stylesheet" href="./cssfactura/crearFactura.css" type="text/css">
     </head>
     <body>
+        <script></script>
         <div>
             <!--Seccion datos empresa-->
-            <table>
+            <table id="tbldempresa">
                 <caption>Facturación</caption>
                 <tbody>
                     <tr>
@@ -39,7 +41,7 @@
         </div>
         <div>
             <!--Seccion de datos sucursal-->
-            <table>
+            <table id="tbldsucursal">
                 <tbody>
                     <tr>
                         <td>
@@ -73,7 +75,7 @@
         </div>
         <div>
             <!--Datos Facturacion-->
-            <table>
+            <table id="tbldcabecera">
                 <tbody>
                     <tr>
                         <td>
