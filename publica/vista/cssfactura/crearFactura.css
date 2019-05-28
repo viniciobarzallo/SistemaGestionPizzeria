@@ -1,6 +1,37 @@
-#tbldempresa{
-    background-color: antiquewhite solid;
-    
+#navegacion{
+    background-color: #799DF9;
 }
-#tbldsucursal{}
-#tblcabecera{}
+body{
+    background-color: deepskyblue;
+}
+.contenedor{
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tituloFactura{
+    background-color: dodgerblue;
+}
+#tbldempresa{
+    display: grid;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#tbldsucursal{
+    display: grid;
+}
+#tblcabecera{
+    display: grid;
+}
+.datosEmpresa{
+    background-color:dodgerblue;
+    display: grid;
+    font-size: 15px;
+}
+#gtotal{
+    width: 600px;
+}
+#total{
+    float: right;
+}

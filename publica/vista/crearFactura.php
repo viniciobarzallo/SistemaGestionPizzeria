@@ -8,14 +8,31 @@
     </head>
     <body>
         <script></script>
-        <div>
+        <div id="navegacion">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Mis pedidos</a>
+                    </li>
+                    <li>
+                        <a href="">Mis facturas</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div id="contenedorDatos-Empresa" class="contenedor">
             <!--Seccion datos empresa-->
             <table id="tbldempresa">
-                <caption>Facturación</caption>
-                <tbody>
+                <caption id="tituloFactura">Facturación</caption>
+                <tbody class="datosEmpresa">
                     <tr>
-                        <td>
-                            <label id="empresa" for="empresa">Empresa</label>
+                        <td class="datosEmpresa">
+                            <label id="empresa" for="empresa">Razón Social</label>
                         </td>
                         <td>
                             <label id="txtempresa" for="empresa">...</label>
@@ -39,7 +56,7 @@
                 </tbody>
             </table>
         </div>
-        <div>
+        <div id="contenedorDatos-Sucursal" class="contenedor">
             <!--Seccion de datos sucursal-->
             <table id="tbldsucursal">
                 <tbody>
@@ -70,10 +87,10 @@
                 </tbody>
             </table>
         </div>
-        <div>
+        <div class="contenedor">
             <!--Cabecera-->
         </div>
-        <div>
+        <div class="contenedor">
             <!--Datos Facturacion-->
             <table id="tbldcabecera">
                 <tbody>
@@ -86,8 +103,29 @@
                 </tbody>
             </table>
         </div>
-        <div>
+        <div id="productos" class="contenedor">
             <!---->
+
+        </div>
+        <div id="gtotal">
+            <div id="total">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td id="txttotal">Total</td>
+                            <td id="total"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="botones" class="contenedor">
+                <p>
+                    <input id="guardar" type="button" value="Guardar" style ="border-style: 2px solid; border-color: #7093F3; background-color:#B0C4F7"/>
+                </p>
+                <p>
+                    <input id="cancelar" type="button" value="Cancelar" style="border-style: 2px solid; border-color: #7093F3; background-color:#B0C4F7"/>
+                </p>
+            </div>
         </div>
     </body>
 </html>
