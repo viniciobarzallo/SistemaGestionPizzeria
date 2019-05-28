@@ -11,9 +11,7 @@
     </head>
     <?php
         session_start();
-        include "../config/conexionBD.php"
-
-        
+        include "../../config/conexionBD.php";
     ?>
     <body>
             <nav>
