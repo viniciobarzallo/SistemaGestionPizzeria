@@ -16,15 +16,17 @@ and open the template in the editor.
             <div class="form_register">
                 <h1><i class="fas fa-user-plus"></i> Registro Usuario</h1>
                 <hr>
-                <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
+                <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div><a href="../controladores/crearUsuario.php"></a>
 
-                <form id="formulario01" method="POST" action="../../controlador/admin/crear_usuario.php" enctype="multipart/form-data">
+                <form id="formulario01" method="POST" action="../controladores/crearUsuario.php" enctype="multipart/form-data">
+                    <label for="cedula">Apellido: </label>
+                    <input type="text" name="cedula" id="cedula" placeholder="Cedula....">                    
                     <label for="nombre">Nombre: </label>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombres Completo...">
-                    <label for="nombre">Apellido: </label>
-                    <input type="text" name="apellido" id="apellido" placeholder="Apellidos Completo..">
-                    <label for="nombre">Fecha De Nacimiento: </label>
-                    <input type="date" name="fechaNacimiento" id="fechaNacimiento" placeholder="Fecha de nacimiento">
+                    <label for="telefono">Telefono: </label>
+                    <input type="tel" name="telefono" id="telefono" placeholder="Telefono....">
+                    <label for="direccion">Direccion: </label>
+                    <input type="text" name="direccion" id="direccion" placeholder="Direccion....">
                     <label for="correo">Correo Electr&oacute;nico: </label>
                     <input type="email" name="correo" id="correo" placeholder="Correo Electronico">
                     <label for="clave">Clave: </label>
