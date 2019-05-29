@@ -1,6 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
- <link rel="stylesheet" href="../estilosHome.css" type="text/css" media="screen">
-<div class="menu">
+
+
+
+
+ <link rel="stylesheet" href="../estiNav.css" type="text/css" media="screen">
 <nav class="navbar navbar-expand-lg navbar-light bg-light"  >
                 <a class="navbar-brand" href="index.php">Inicio</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +32,6 @@
                   </form>
                 </div>
               </nav>
-</div> 
 
 
 

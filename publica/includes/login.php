@@ -18,6 +18,11 @@
               <a class="nav-link " href="../publica/login.php">Iniciar Sesiòn</a>
               
             </li>
+
+            <li class="nav nav-item navbar-right">
+              <a class="nav-link " href="../privada/vista/registroUsuario.php">Registrarse</a>
+              
+            </li>
     </ul>
       
           

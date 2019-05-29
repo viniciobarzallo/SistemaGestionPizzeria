@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="estilosHome.css" >
     <link rel="stylesheet" href="estilosHome.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="estiVision.css" type="text/css" media="screen">
    
     <title>Index</title>
   </head>
@@ -16,32 +17,39 @@
 
         <?php include "includes/login.php" ?> 
         <?php include "includes/nav.php" ?>
-    
         
-      <article >
-        <p><strong><h1>Visiòn</h1>
-                Brindar un servicio de calidad a nivel regional, proporcionando a nuestros 
-                clientes una variedad de ofertas que permitan a nuestro público disfrutar 
-                de productos propios e innovadores, en un mercado establecido, con una delicada 
-                elaboración con ingredientes de primera calidad, a un precio razonable y competitivo, 
-                de esa manera superar las expectativas de nuestro público consumidor.</strong>
-                
-            </p>
+    
+     <div class="vision">
 
-            <p><strong><left>
-                <h1>Misiòn</h1>
-                Brindar un servicio de calidad a nivel regional, proporcionando a nuestros 
-                clientes una variedad de ofertas que permitan a nuestro público disfrutar 
-                de productos propios e innovadores, en un mercado establecido, con una delicada 
-                elaboración con ingredientes de primera calidad, a un precio razonable y competitivo, 
-                de esa manera superar las expectativas de nuestro público consumidor.
-            </left></strong>
-                
-                
-            </p>
-
-      </article>   
-
+            <div class="lateral">
+                <p id="vi"><strong><h1>Visiòn</h1>
+                  
+                   Brindar un servicio de calidad a nivel regional, proporcionando a nuestros 
+                    clientes una variedad de ofertas que permitan a nuestro público disfrutar 
+                    de productos propios e innovadores, en un mercado establecido, con una delicada 
+                    elaboración con ingredientes de primera calidad, a un precio razonable y competitivo, 
+                    de esa manera superar las expectativas de nuestro público consumidor.</strong>
+                   
+                    
+                </p>
+            </div>
+            <div class="pricipal">
+                    <p><strong><left>
+                        <h1>Misiòn</h1>
+                        Brindar un servicio de calidad a nivel regional, proporcionando a nuestros 
+                        clientes una variedad de ofertas que permitan a nuestro público disfrutar 
+                        de productos propios e innovadores, en un mercado establecido, con una delicada 
+                        elaboración con ingredientes de primera calidad, a un precio razonable y competitivo, 
+                        de esa manera superar las expectativas de nuestro público consumidor.
+                    </left></strong>
+                        
+                        
+                    </p>
+            </div>
+            
+     </div>   
+      
+     <?php include "includes/contactos.php" ?>
        
          
 

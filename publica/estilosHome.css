@@ -14,9 +14,6 @@ body {
 
 
 
-.bg-lightbg {
-    background-color: green;
-}
 .bd-example {
     width: 50%;
     display: block;
@@ -44,5 +41,9 @@ body {
     background: #058167;
     position: -ms-page;
 }
+
+footer {
+    background-color: #058167; 
+ }
  
 
