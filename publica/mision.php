@@ -6,20 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    
-    <link rel="stylesheet" href="../estilosHome.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilosHome.css">
     <title>Index</title>
   </head>
-  <body >
-    <ul class="nav">
+  <body>
+
+        <?php include "includes/login.php" ?> 
+        <?php include "includes/nav.php" ?>
+         
+
+        <p id="pa">
+            <center>
+            <h1>Misiòn</h1>
+            Brindar un servicio de calidad a nivel regional, proporcionando a nuestros 
+            clientes una variedad de ofertas que permitan a nuestro público disfrutar 
+            de productos propios e innovadores, en un mercado establecido, con una delicada 
+            elaboración con ingredientes de primera calidad, a un precio razonable y competitivo, 
+            de esa manera superar las expectativas de nuestro público consumidor.
+            </center>
             
-            <li class="nav nav-item navbar-right">
-              <a class="nav-link " href="../publica/login.php">Iniciar Sesiòn</a>
-              
-            </li>
-    </ul>
-      
+        </p>
+
+         
+
+
           
 
     <!-- Optional JavaScript -->
