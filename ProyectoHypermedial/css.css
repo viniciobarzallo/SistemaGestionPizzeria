@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+html{
+	background-color: #254F32;
+}
+
+body{
+	background-color: #ED8B3E;
+	text-align: center;
+	margin: 3%;
+	height: 655px;
+	padding: 0;
+}
+header{
+	background-color: #9DAF17;
+}
+
+table {
+	background-color: #CFC763;
+	color: #7A4809;
+	width: 50%;
+	max-width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+td, th{
+	background-color: #CEDB71;
+	
+}
+
+.tabtexto{
+	width: 98%;
+	background-color: #CEDB71;
+}
+
+caption{
+	color: #3E2F03
+}
+
+.boton{
+	float: inherit;
+	margin-top: 3%;
+	background-color: #1C2E84;
+	color: white;
+	cursor: pointer;
+	font-size: 100%;
+}
+
+.botona{
+	float: inherit;
+	margin-top: 10%;
+	background-color: #1C2E84;
+	color: white;
+	cursor: pointer;
+	width: 20%;
+	font-size: 150%;
+	text-decoration: none;
+}
+
+.botonb{
+	float: inherit;
+	background-color: #1C2E84;
+	color: white;
+	cursor: pointer;
+	width: 5%;
+	font-size: 90%;
+	text-decoration: none;
+}
+
+.botonc{
+	float: inherit;
+	margin-top: 3%;
+	background-color: #1C2E84;
+	color: white;
+	cursor: pointer;
+	font-size: 120%;
+}
+
+.txt{
+	background-color: #CEDB71;
+	width: 20%;
+}
