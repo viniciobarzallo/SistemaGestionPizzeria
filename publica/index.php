@@ -28,21 +28,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../imagenes/jugos.png"  width="800" height="500"  alt="jugos" >
+        <img src="../imagenes/pizzaonline.png"  width="800" height="500"  alt="pizzaonline" >
           <div class="carousel-caption d-none d-md-block">
           <h5>pizza1</h5>
           <p>el nuevo sabor ....</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="../imagenes/pizza3.png" width="800" height="500" alt="pizza3">
+        <img src="../imagenes/pizzaonline1.png" width="800" height="500" alt="pizza3">
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>el nuevo sabor ....</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="../imagenes/pizza4.png"  width="800" height="500" alt="pizza4" margin="auto">
+        <img src="../imagenes/pizzaonline2.png"  width="800" height="500" alt="pizza4" margin="auto">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>el nuevo sabor ....</p>
