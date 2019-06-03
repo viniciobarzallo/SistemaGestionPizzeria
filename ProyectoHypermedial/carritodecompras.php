@@ -26,15 +26,19 @@
 </head>
 <body>
 	<div>
-	<h2>Usuario:<?php echo $correo?></h2>
-	<br>
+		<h2>Usuario:<?php echo $correo?></h2>
+		<br>
+		<a href="">Cerrar Sesión</a>
+		<br/>
+		<br/>
+	</div>
 	<div>
 	<div>
 	<?php
 		$sqlPedido="SELECT * FROM producto,pedido WHERE ped_fk_per_id=".$idPer." and ped_fk_pro_id=id;	";
 		//echo $sqlPedido;
 		$res = $conn->query($sqlPedido);?>
-		<table>
+		<table id="tabla">
 				<caption>Lista de productos solicitados</caption>
 				<tbody>
 				<tr>
@@ -57,10 +61,10 @@
 					<td name="cel"<?php echo $i?>><?php echo $idPro=$g['ped_id'];?></td>
 					<td><?php echo $nPro=$g['nombre'];?></td>
 					<td><?php echo $descPro=$g['descripcion'];?></td>
-					<td id="pre"<?php echo $i?>>$<?php echo $prePro=$g['precio'];?></td>
+					<td > <label id="pre<?php echo $i?>"><?php echo $prePro=$g['precio'];?></label> </td>
 					<td><img src="./productos/<?php echo $imgpro=$g['imagen'];?>" style="width:40px;height:40px" ></td>
-					<td><input type="text" style="width:20px;height:15px" onkeyup="suma(<?php echo $i ?>)"></td>
-					<td><label id="tot"+<?php echo $i?> style="width:20px;height:15px"></label></td>
+					<td><input id="can<?php echo $i?>" type="text" style="width:20px;height:15px" onkeyup="suma(<?php echo $i ?>)" value=0></td>
+					<td><label id="tot<?php echo $i?>" style="width:20px;height:15px"></label></td>
 					<td><a href="./eliminarPro.php?id=<?php echo $g['ped_id'];?>">
 						<img src="./imagenes/eliminarLista.jpg" alt="" style="width:40px;height:30px/"></a></td>
 				</tr>
@@ -73,11 +77,13 @@
 		<td></td>
 		<td></td>
 		<td><label>Total</label></td>
-		<td><input type="text" style="width:20px;height:15px" disabled/></td>
-		<td><input type="text" style="width:20px;height:15px" disabled/></td>
+		<td><input id="tcantidad" type="text" style="width:20px;height:15px" disabled/></td>
+		<td><input id="tprecio" type="text" style="width:20px;height:15px" disabled/></td>
 	</tr>
 	<tbody>
 		</table>
+	</div>
+	<div>
 		<a href="">Facturar</a>
 		<br/>
 		<br/>
@@ -87,9 +93,38 @@
 
 	<script type="text/javascript">
 		function suma(id){
-			var id1='"tot'+id+'"';
-			alert(id1);
-			document.getElementById(id1).innerHTML="10";
+			var total="tot"+id;
+			var idpre="pre"+id;
+			//alert(idpre);
+			var precio=document.getElementById(idpre).innerHTML;
+			var idcan="can"+id;
+			var can=document.getElementById(idcan).value;
+
+			//alert(precio);
+			document.getElementById(total).innerHTML=precio*can;
+			
+			var nfilas=$("#tabla tr").length;
+			alert(nfilas);
+			var i=0;
+			var totalcantidad=0;
+			var totalprecio=0;
+			
+			for(i=1;i<=nfilas;i++){
+				var tcid="can"+i;
+				var ttid="tot"+i;
+				
+				try{
+					var tcan=document.getElementById(tcid).value;
+					var ttot=document.getElementById(ttid).innerHTML;
+					totalcantidad=totalcantidad+tcan;//sumatoria final de cantidades
+					totalprecio=totalprecio+ttot;//sumatoria final de precios
+				}
+				catch(error){
+					alert(error);
+				}
+			}
+			document.getElementById("tcantidad").innerHTML=totalcantidad;
+			document.getElementById("tprecio").innerHTML=totalprecio;
 		}
 	</script>
 </body>
