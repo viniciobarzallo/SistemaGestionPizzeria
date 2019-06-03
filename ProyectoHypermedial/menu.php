@@ -38,9 +38,8 @@
 	<section>
 		
 	<?php
-		
         $sql ="select * from producto";
-        $result = $conn->query($sql);                
+				$result = $conn->query($sql);                
                     
 		while($f=mysqli_fetch_array($result)) {
 		?>

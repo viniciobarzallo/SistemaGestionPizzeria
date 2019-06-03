@@ -16,9 +16,10 @@
 	<section>
 	<?php
 		include 'conexion.php';
-		 $sql = "SELECT `nombre`,`imagen`, `cantidad`,`precio` FROM `detallefactura`,`producto` WHERE id=Producto_idProducto";
-       $result = $conn->query($sql);                
-                    
+		$id=$_GET['id'];
+		 $sql = "SELECT `nombre`,`imagen`,`precio` FROM `producto` WHERE id= ".$id." ;";
+		 
+       $result = $conn->query($sql);
 		while ($f=mysqli_fetch_array($result)) {
 		?>
 			
@@ -26,7 +27,8 @@
 				<img src="./productos/<?php echo $f['imagen'];?>"><br>
 				<span><?php echo $f['nombre'];?></span><br>
 				<span>Precio: <?php echo $f['precio'];?></span><br>
-				<a href="./carritodecompras.php?id=<?php  echo $f['id'];?>">Añadir al carrito de compras</a>
+				
+				<a href="./guardarPed.php?id=<?php  echo $id;?>">Agregar a pedido</a>
 			</center>
 		
 	<?php
