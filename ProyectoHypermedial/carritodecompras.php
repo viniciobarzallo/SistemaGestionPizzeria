@@ -89,7 +89,7 @@
 		function suma(id){
 			var id1='"tot'+id+'"';
 			alert(id1);
-			//document.getElementById(id1).innerHTML="10";
+			document.getElementById(id1).innerHTML="10";
 		}
 	</script>
 </body>
