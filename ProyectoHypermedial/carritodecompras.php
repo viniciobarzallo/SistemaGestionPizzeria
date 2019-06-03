@@ -63,7 +63,8 @@
 					<td><?php echo $descPro=$g['descripcion'];?></td>
 					<td > <label id="pre<?php echo $i?>"><?php echo $prePro=$g['precio'];?></label> </td>
 					<td><img src="./productos/<?php echo $imgpro=$g['imagen'];?>" style="width:40px;height:40px" ></td>
-					<td><input id="can<?php echo $i?>" type="text" style="width:20px;height:15px" onkeyup="suma(<?php echo $i ?>)" value=0></td>
+					<td><input id="can<?php echo $i?>" type="text" style="width:20px;height:15px" 
+							onkeyup="suma(<?php echo $i ?>)"/></td>
 					<td><label id="tot<?php echo $i?>" style="width:20px;height:15px"></label></td>
 					<td><a href="./eliminarPro.php?id=<?php echo $g['ped_id'];?>">
 						<img src="./imagenes/eliminarLista.jpg" alt="" style="width:40px;height:30px/"></a></td>
@@ -77,15 +78,15 @@
 		<td></td>
 		<td></td>
 		<td><label>Total</label></td>
-		<td><input id="tcantidad" type="text" style="width:20px;height:15px" disabled/></td>
-		<td><input id="tprecio" type="text" style="width:20px;height:15px" disabled/></td>
+		<td><input id="tcantidad" type="text" style="width:30px;height:15px" disabled/></td>
+		<td><input id="tprecio" type="text" style="width:30px;height:15px" disabled/></td>
 	</tr>
 	<tbody>
 		</table>
 	</div>
 	<div>
-		<a href="">Facturar</a>
-		<br/>
+		<input type="button" value="Facturar" style="width:100px;height:30px" />
+		<h5>Costo de envio $5.00</h5>
 		<br/>
 		<a href="menu.php">Ir a productos</a>
 		<h1></h1>
@@ -103,8 +104,7 @@
 			//alert(precio);
 			document.getElementById(total).innerHTML=precio*can;
 			
-			var nfilas=$("#tabla tr").length;
-			alert(nfilas);
+			var nfilas=($("#tabla tr").length)-2;
 			var i=0;
 			var totalcantidad=0;
 			var totalprecio=0;
@@ -123,8 +123,28 @@
 					alert(error);
 				}
 			}
-			document.getElementById("tcantidad").innerHTML=totalcantidad;
-			document.getElementById("tprecio").innerHTML=totalprecio;
+			document.getElementById("tcantidad").value=totalcantidad;
+			document.getElementById("tprecio").value=totalprecio;
+		}
+		function facturar(){
+			var name = $('#name').val();
+		var email = $('#email').val();
+		var password = $('#password').val();
+		var gender = $('#gender').val();
+		
+		$ajax({
+			type:'POST',
+			data:{cantidad:cantidad,precioTotal:precioTotal,subTotal:subTotal,:gender},
+			url:"facturacion.php", //php page URL where we post this data to save in databse
+			success: function(result){
+			
+				$('#alert').show();
+				
+				$('#show').html(result);
+						
+				
+			}
+		})
 		}
 	</script>
 </body>

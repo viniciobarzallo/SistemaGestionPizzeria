@@ -1,4 +1,5 @@
 	<script type="text/javascript">
+		
 		$(document).ready(function() {
 			/*
 			 *  Simple image gallery. Uses default settings
@@ -26,7 +27,7 @@
 			$(".fancybox-effects-b").fancybox({
 				openEffect  : 'none',
 				closeEffect	: 'none',
-
+				
 				helpers : {
 					title : {
 						type : 'over'
