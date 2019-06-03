@@ -24,11 +24,13 @@
 		?>
 			
 			<center>
-				<img src="./productos/<?php echo $f['imagen'];?>"><br>
+				<img src="./productos/<?php echo $f['imagen'];?>" style="width:300px;height:300px"/><br>
 				<span><?php echo $f['nombre'];?></span><br>
 				<span>Precio: <?php echo $f['precio'];?></span><br>
 				
 				<a href="./guardarPed.php?id=<?php  echo $id;?>">Agregar a pedido</a>
+				<br/>
+				<a href="./menu.php">Ir a productos</a>
 			</center>
 		
 	<?php
@@ -38,7 +40,3 @@
 		
 
 <?php
-		
-        
-
-		

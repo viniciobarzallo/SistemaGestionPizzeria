@@ -10,7 +10,7 @@ $dbname ="tiendaonline";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-echo "Conexion exitosa";
+//echo "Conexion exitosa";
 
 
 // Check connection

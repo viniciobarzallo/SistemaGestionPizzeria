@@ -22,6 +22,7 @@
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	
 </head>
 <body>
 	<div>
@@ -47,19 +48,24 @@
 					<td><label>Acción</label></td>
 				</tr>
 				<?php
-					while($g=mysqli_fetch_array($res)){?>
+				$i=0;
+				while($g=mysqli_fetch_array($res)){
+						$i=$i+1;
+				?>
+					
 				<tr>
-					<td><?php echo $idPro=$g['ped_id'];?></td>
+					<td name="cel"<?php echo $i?>><?php echo $idPro=$g['ped_id'];?></td>
 					<td><?php echo $nPro=$g['nombre'];?></td>
 					<td><?php echo $descPro=$g['descripcion'];?></td>
-					<td>$<?php echo $prePro=$g['precio'];?></td>
+					<td id="pre"<?php echo $i?>>$<?php echo $prePro=$g['precio'];?></td>
 					<td><img src="./productos/<?php echo $imgpro=$g['imagen'];?>" style="width:40px;height:40px" ></td>
-					<td><input type="text" style="width:20px;height:15px"/></td>
-					<td><input type="text" style="width:20px;height:15px" disabled/></td>
-					<td><input type="image" name="botondeenvio" src="./imagenes/eliminarLista.jpg" alt=""></td>
+					<td><input type="text" style="width:20px;height:15px" onkeyup="suma(<?php echo $i ?>)"></td>
+					<td><label id="tot"+<?php echo $i?> style="width:20px;height:15px"></label></td>
+					<td><a href="./eliminarPro.php?id=<?php echo $g['ped_id'];?>">
+						<img src="./imagenes/eliminarLista.jpg" alt="" style="width:40px;height:30px/"></a></td>
 				</tr>
-		<?php
-		}
+				<?php
+				}
 	?>
 	<tr>
 		<td></td>
@@ -72,8 +78,19 @@
 	</tr>
 	<tbody>
 		</table>
-		<input type="button" value="Facturar" style="width:150px;height:30px" onclick=""/>
+		<a href="">Facturar</a>
+		<br/>
+		<br/>
 		<a href="menu.php">Ir a productos</a>
+		<h1></h1>
 	</div>
+
+	<script type="text/javascript">
+		function suma(id){
+			var id1='"tot'+id+'"';
+			alert(id1);
+			//document.getElementById(id1).innerHTML="10";
+		}
+	</script>
 </body>
 </html>
