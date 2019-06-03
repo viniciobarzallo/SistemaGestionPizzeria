@@ -91,28 +91,28 @@
 <div class="slider-wrapper theme-mi-slider">
 	<div id="slider" class="nivoSlider">     
 		    <img src="../imagenes/pizzaonline1.png" alt="" title="#htmlcaption1" />    
-		    <img src="img/2.jpg" alt="" title="#htmlcaption2" />    
-		    <img src="img/3.jpg" alt="" title="#htmlcaption3" /> 
+		    <img src="imagenes/pizza1.png" alt="" title="#htmlcaption2" />   
+		    <img src="imagenes/pizza.png" alt="" title="#htmlcaption3" /> 
             <img src="../imagenes/pizzaonline2.png" alt="" title="#htmlcaption4" />    
-		    <img src="img/5.jpg" alt="" title="#htmlcaption5" />     
+		    <img src="pizzaonline.png" alt="" title="#htmlcaption5" />     
 	</div> 
 		<div id="htmlcaption1" class="nivo-html-caption">     
-	      <h1><b style="color:#F00">Bienvenidos a Jamn Food</b></h1>
+	      <h1><b style="color:#F00">Bienvenidos a Pizza y sabor</b></h1>
 		    <p><b>OFRECEMOS:</b></p>
 		</div>
 		<div id="htmlcaption2" class="nivo-html-caption">     
-		    <h1>PLATOS FUERTES</h1>
+		    <h1>Pizzas de todos los sabores</h1>
 		</div>
 		<div id="htmlcaption3" class="nivo-html-caption">     
-		    <h1>BEBIDAS</h1>
+		    <h1></h1>
 		</div>
 
   <div id="htmlcaption4" class="nivo-html-caption">     
-		    <h1 style="color:#000">POSTRES</h1>
+		    <h1 style="color:#000"></h1>
 	</div>
 </div>
 <div id="htmlcaption5" class="nivo-html-caption">     
-		    <h1>CARNE</h1>
+		    <h1></h1>
   </div>
 <div id="footer">
   <table width="200" border="0">
