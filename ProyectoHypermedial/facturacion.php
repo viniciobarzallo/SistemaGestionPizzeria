@@ -1,0 +1,52 @@
+<?php
+    session_start();
+    include 'conexion.php';
+    if(isset($_SESSION['usuario'])){
+		$correo=$_SESSION['usuario'];
+		///echo $correo;
+
+        //$sqlIdCli="SELECT * FROM PERSONA WHERE correo= '".$_SESSION['usuario']."' ;";
+        //$sqlPedido="SELECT * FROM producto,pedido WHERE ped_fk_per_id=".$idPer." and ped_fk_pro_id=id";
+        $sqla="SELECT AUTO_INCREMENT 
+        FROM INFORMATION_SCHEMA.TABLES
+        WHERE TABLE_NAME='factura'
+        AND TABLE_SCHEMA=DATABASE();";
+
+        //$sqla="SELECT * FROM pedido";
+        $res = $conn->query($sqla);
+        while($g=mysqli_fetch_array($res))
+        {
+            $auto=$g['AUTO_INCREMENT'];
+        }
+        $sqlIdCli="SELECT * FROM PERSONA WHERE correo= '".$_SESSION['usuario']."' ;";
+    	//echo $sqlIdCli;
+    	$result = $conn->query($sqlIdCli);
+    	$idPer='';
+    	while ($f=mysqli_fetch_array($result)) {
+        	$idPer= $f['idPersona'];
+		}
+
+        date_default_timezone_set('America/Guayaquil');
+        $fecha=strftime( "%Y/%m/%d   %H:%M", time() );
+        echo $fecha;
+    	echo $sqlInsFact;
+    	//$result = $conn->query($sqlIdCli);
+    	//$idPer='';
+    	//while ($f=mysqli_fetch_array($result)) {
+        //	$idPer= $f['idPersona'];
+        //}
+        
+        if($_REQUEST['name']){
+            $subtotal = $_REQUEST['name'];
+            $total = $_REQUEST['total'];
+            
+            $sqlInsFact="INSERT INTO FACTURA VALUES(0,'$fecha','Facturado',$subtotal,5,$total,$idPer)";
+            
+            $query = mysqli_query($sqlInsFact);
+            if($query){
+                echo ' Data Inserted Successfully'
+                mysql_close($connection);
+                }
+            }
+	}
+?>
