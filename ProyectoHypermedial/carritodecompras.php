@@ -58,11 +58,11 @@
 				?>
 					
 				<tr>
-					<td name="cel"<?php echo $i?>><?php echo $idPro=$g['ped_id'];?></td>
-					<td><?php echo $nPro=$g['nombre'];?></td>
-					<td><?php echo $descPro=$g['descripcion'];?></td>
+					<td name="cel<?php echo $i?>"><label id="idpro"<?php echo $i?>><?php echo $idPro=$g['ped_id'];?></label></td>
+					<td><label id="npro<?php echo $i?>" ><?php echo $nPro=$g['nombre'];?> </label></td>
+					<td><label id="ppro<?php echo $i?>" ><?php echo $descPro=$g['descripcion'];?></label></td>
 					<td > <label id="pre<?php echo $i?>"><?php echo $prePro=$g['precio'];?></label> </td>
-					<td><img src="./productos/<?php echo $imgpro=$g['imagen'];?>" style="width:40px;height:40px" ></td>
+					<td><img id="impro" src="./productos/<?php echo $imgpro=$g['imagen'];?>" style="width:40px;height:40px" ></td>
 					<td><input id="can<?php echo $i?>" type="text" style="width:20px;height:15px" 
 							onkeyup="suma(<?php echo $i ?>)"/></td>
 					<td><label id="tot<?php echo $i?>" style="width:20px;height:15px"></label></td>
@@ -85,10 +85,10 @@
 		</table>
 	</div>
 	<div>
-		<input type="button" value="Facturar" style="width:100px;height:30px" />
+		<a href="facturacion.php" style="width:100px;height:30px">Facturación</a>
 		<h5>Costo de envio $5.00</h5>
 		<br/>
-		<a href="menu.php">Ir a productos</a>
+		<a href="menu.php" onclick="facturar()">Ir a productos</a>
 		<h1></h1>
 	</div>
 
@@ -127,24 +127,20 @@
 			document.getElementById("tprecio").value=totalprecio;
 		}
 		function facturar(){
-			var name = $('#name').val();
-		var email = $('#email').val();
-		var password = $('#password').val();
-		var gender = $('#gender').val();
-		
-		$ajax({
-			type:'POST',
-			data:{cantidad:cantidad,precioTotal:precioTotal,subTotal:subTotal,:gender},
-			url:"facturacion.php", //php page URL where we post this data to save in databse
-			success: function(result){
-			
-				$('#alert').show();
-				
-				$('#show').html(result);
-						
-				
+			var nfilas=($("#tabla tr").length)-2;
+			var ncolumnas=document.getElementById("tabla").row.length);
+			var i=0;
+			var totalcantidad=0;
+			var totalprecio=0;
+			for(){
+				var id = document.getElementById("idpro"+$i).value;
+				var nombre = document.getElementById("npro"+$i).value;
+				var descripcion = document.getElementById("ppro"+$i).value;
+				var precio = document.getElementById("pre"+$i).value;
+				var imagen = document.getElementById("impro"+$i).value;
+				var cantidad = document.getElementById("can"+$i).value;
+				var total = document.getElementById("").value;
 			}
-		})
 		}
 	</script>
 </body>
