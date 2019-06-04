@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header>
-		<img src="./imagenes/logo1.png" id="logo">
+		<img src="imagenes/logo.png" id="logo">
 		<a href="./carritodecompras.php" title="ver carrito de compras">
 			<img src="./imagenes/carrito.png">
 		</a>
