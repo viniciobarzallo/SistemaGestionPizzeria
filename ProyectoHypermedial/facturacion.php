@@ -5,8 +5,15 @@
 		$correo=$_SESSION['usuario'];
 		///echo $correo;
 
-        //$sqlIdCli="SELECT * FROM PERSONA WHERE correo= '".$_SESSION['usuario']."' ;";
-        //$sqlPedido="SELECT * FROM producto,pedido WHERE ped_fk_per_id=".$idPer." and ped_fk_pro_id=id";
+        $sqlIdCli="SELECT * FROM PERSONA WHERE correo= '".$_SESSION['usuario']."' ;";
+
+        $result = $conn->query($sqlIdCli);
+    	$idPer='';
+    	while ($f=mysqli_fetch_array($result)) {
+        	$idPer= $f['idPersona'];
+        }
+        echo $idPer;
+
         $sqla="SELECT AUTO_INCREMENT 
         FROM INFORMATION_SCHEMA.TABLES
         WHERE TABLE_NAME='factura'
@@ -18,35 +25,14 @@
         {
             $auto=$g['AUTO_INCREMENT'];
         }
-        $sqlIdCli="SELECT * FROM PERSONA WHERE correo= '".$_SESSION['usuario']."' ;";
-    	//echo $sqlIdCli;
-    	$result = $conn->query($sqlIdCli);
-    	$idPer='';
-    	while ($f=mysqli_fetch_array($result)) {
-        	$idPer= $f['idPersona'];
-		}
-
+        
         date_default_timezone_set('America/Guayaquil');
         $fecha=strftime( "%Y/%m/%d   %H:%M", time() );
         echo $fecha;
-    	echo $sqlInsFact;
     	//$result = $conn->query($sqlIdCli);
     	//$idPer='';
     	//while ($f=mysqli_fetch_array($result)) {
         //	$idPer= $f['idPersona'];
         //}
-        
-        if($_REQUEST['name']){
-            $subtotal = $_REQUEST['name'];
-            $total = $_REQUEST['total'];
-            
-            $sqlInsFact="INSERT INTO FACTURA VALUES(0,'$fecha','Facturado',$subtotal,5,$total,$idPer)";
-            
-            $query = mysqli_query($sqlInsFact);
-            if($query){
-                echo ' Data Inserted Successfully'
-                mysql_close($connection);
-                }
-            }
 	}
 ?>

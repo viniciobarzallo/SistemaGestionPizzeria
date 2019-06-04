@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2018 a las 22:04:18
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.3
+-- Tiempo de generación: 03-06-2019 a las 23:49:50
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.1.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`idAdministrador`, `usuario`, `contrasenia`) VALUES
-(1, 'apaquig@hotmail.com', 'GMQCitpx1900'),
+(1, 'apaquig@hotmail.com', '12345'),
 (2, 'angel', '12345');
 
 -- --------------------------------------------------------
@@ -96,24 +96,6 @@ INSERT INTO `categoria` (`idCategoria`, `catDescripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
---
-
-CREATE TABLE `cliente` (
-  `idCliente` int(11) NOT NULL,
-  `Persona_idPersona` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `cliente`
---
-
-INSERT INTO `cliente` (`idCliente`, `Persona_idPersona`) VALUES
-(1, 1);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `detallefactura`
 --
 
@@ -125,13 +107,6 @@ CREATE TABLE `detallefactura` (
   `Factura_idFactura` int(11) NOT NULL,
   `Producto_idProducto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `detallefactura`
---
-
-INSERT INTO `detallefactura` (`iddetalleFactura`, `cantidad`, `precioTotal`, `subTotal`, `Factura_idFactura`, `Producto_idProducto`) VALUES
-(1, '2', '10', '20', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -187,15 +162,9 @@ CREATE TABLE `factura` (
   `subTotal` decimal(10,0) NOT NULL,
   `valorEnvio` decimal(10,0) NOT NULL,
   `total` decimal(10,0) NOT NULL,
-  `Cliente_idCliente` int(11) NOT NULL
+  `Cliente_idCliente` int(11) NOT NULL,
+  `fk_ped_id` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `factura`
---
-
-INSERT INTO `factura` (`idFactura`, `fecha`, `estadoFactura`, `subTotal`, `valorEnvio`, `total`, `Cliente_idCliente`) VALUES
-(1, '10/07/2018', 'cancelado', '20', '3', '23', 1);
 
 -- --------------------------------------------------------
 
@@ -204,17 +173,19 @@ INSERT INTO `factura` (`idFactura`, `fecha`, `estadoFactura`, `subTotal`, `valor
 --
 
 CREATE TABLE `pedido` (
-  `idPedido` int(11) NOT NULL,
-  `iddetallefactura` int(11) DEFAULT NULL,
-  `estado` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+  `ped_id` int(12) NOT NULL,
+  `ped_fk_per_id` int(12) NOT NULL,
+  `ped_fk_pro_id` int(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `pedido`
 --
 
-INSERT INTO `pedido` (`idPedido`, `iddetallefactura`, `estado`) VALUES
-(1, 1, 'en curso');
+INSERT INTO `pedido` (`ped_id`, `ped_fk_per_id`, `ped_fk_pro_id`) VALUES
+(5, 4, 4),
+(12, 4, 3),
+(13, 4, 7);
 
 -- --------------------------------------------------------
 
@@ -238,7 +209,8 @@ CREATE TABLE `persona` (
 INSERT INTO `persona` (`idPersona`, `nombre`, `apellido`, `cedula`, `correo`, `contrasenia`) VALUES
 (1, 'Angel', 'Paqui', '1900790672', 'angel@gmail.com', 'cuenca12345'),
 (2, 'Juan', 'Perez', '1900790683', 'apaquig@gmail.com', 'GMQCitpx1900'),
-(3, 'Magna', 'Mejia', '0989898876', 'magna@gmail.com', 'cuenca12345');
+(3, 'Magna', 'Mejia', '0989898876', 'magna@gmail.com', 'cuenca12345'),
+(4, 'Angel', 'Jadan', '0106405236', 'angel.jadan12@gmail.com', 'angel');
 
 -- --------------------------------------------------------
 
@@ -264,7 +236,8 @@ INSERT INTO `producto` (`id`, `nombre`, `imagen`, `descripcion`, `precio`, `Cate
 (4, 'churrasco', 'churrasco.jpg', 'Ricos y sabrosoz unicos en el mundo', '5', 1),
 (5, 'Cuy', 'cuy.jpg', 'dfghjk,mgfdghjk', '23', 1),
 (6, 'cuysito', '879667_cuysito.jpg', 'dhggh sdhshjdshjd', '45', 1),
-(7, 'cop', 'cop.jpg', 'copapap', '23', 1);
+(7, 'cop', 'cop.jpg', 'copapap', '23', 1),
+(8, 'pizza', 'Diagrama1.jpeg', 'con papas', '1', 4);
 
 -- --------------------------------------------------------
 
@@ -345,13 +318,6 @@ ALTER TABLE `categoria`
   ADD UNIQUE KEY `descripcion_UNIQUE` (`catDescripcion`);
 
 --
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idCliente`,`Persona_idPersona`),
-  ADD KEY `fk_Cliente_Persona1_idx` (`Persona_idPersona`);
-
---
 -- Indices de la tabla `detallefactura`
 --
 ALTER TABLE `detallefactura`
@@ -372,7 +338,16 @@ ALTER TABLE `empleado`
 --
 ALTER TABLE `factura`
   ADD PRIMARY KEY (`idFactura`,`Cliente_idCliente`),
-  ADD KEY `fk_Factura_Cliente1_idx` (`Cliente_idCliente`);
+  ADD UNIQUE KEY `fk_ped_id` (`fk_ped_id`) USING BTREE,
+  ADD KEY `Cliente_idCliente` (`Cliente_idCliente`);
+
+--
+-- Indices de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`ped_id`),
+  ADD KEY `ped_fk_per_id` (`ped_fk_per_id`),
+  ADD KEY `ped_fk_pro_id` (`ped_fk_pro_id`) USING BTREE;
 
 --
 -- Indices de la tabla `persona`
@@ -432,16 +407,10 @@ ALTER TABLE `categoria`
   MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT de la tabla `detallefactura`
 --
 ALTER TABLE `detallefactura`
-  MODIFY `iddetalleFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iddetalleFactura` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
@@ -453,19 +422,25 @@ ALTER TABLE `empleado`
 -- AUTO_INCREMENT de la tabla `factura`
 --
 ALTER TABLE `factura`
-  MODIFY `idFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idFactura` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  MODIFY `ped_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tarjeta`
@@ -491,12 +466,6 @@ ALTER TABLE `cargoempleado`
   ADD CONSTRAINT `fk_cargoEmpleado_Empleado1` FOREIGN KEY (`Empleado_idEmpleado`) REFERENCES `empleado` (`idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD CONSTRAINT `fk_Cliente_Persona1` FOREIGN KEY (`Persona_idPersona`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Filtros para la tabla `detallefactura`
 --
 ALTER TABLE `detallefactura`
@@ -514,7 +483,14 @@ ALTER TABLE `empleado`
 -- Filtros para la tabla `factura`
 --
 ALTER TABLE `factura`
-  ADD CONSTRAINT `fk_Factura_Cliente1` FOREIGN KEY (`Cliente_idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`Cliente_idCliente`) REFERENCES `persona` (`idPersona`);
+
+--
+-- Filtros para la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  ADD CONSTRAINT `fk_pedido_pro_id` FOREIGN KEY (`ped_fk_pro_id`) REFERENCES `producto` (`id`),
+  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`ped_fk_per_id`) REFERENCES `persona` (`idPersona`);
 
 --
 -- Filtros para la tabla `producto`
