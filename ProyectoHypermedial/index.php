@@ -66,29 +66,8 @@
 </head>
 <body>
 <div id="contenedor">
-  <div id="encabezado">
-    <div id="logo"><img src="logo.png" width="222" height="128" alt="logo" /></div>
-  </div>
- /* class="fancybox fancybox.iframe"*/
-  <a href="sesion.php"></a>
-  <div id="registro"><a href="crearCuenta.php" class="fancybox fancybox.iframe">Registrate Aquí</a></div>
-<div id="menu">
-	<ul class="nav">
-	  	<li><a href="">INICIO</a></li>
-		<li><a href="menu.php">MENU</a>
-        </li>
-		<li><a href="quienesSomos.html">QUIENES SOMOS</a></li>
-        <li><a href="sesionadmi.php">ADMINISTRACION</a>
-            <ul>
-            	  <li><a class="sub" href="sesionadmi.php">Administrador</a>
-                  <li><a class="sub" href="sesionRep.php">Repartidor</a>
-                  <li><a class="sub" href="sesionChef.php">Chéf</a>
-            </ul>
-        </li>
-      <li><a href="sesion.php">INICIAR SESION</a></li>
-    </ul>
-</div>
-<div class="slider-wrapper theme-mi-slider">
+	<?php include "mennu.php" ?>
+	<div class="slider-wrapper theme-mi-slider">
 	<div id="slider" class="nivoSlider">     
 		    <img src="imagenes/pizzaonline1.png" alt="" title="#htmlcaption1" />    
 		    <img src="imagenes/pizza1.png" alt="" title="#htmlcaption2" />   

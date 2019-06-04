@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Documento sin título</title>
+<meta charset="utf-8">
+<link href="css/indexestilos.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 #contenedor {
 	position: absolute;
@@ -31,10 +33,7 @@ background:#000;
 	left: 338px;
 	top: 34px;
 }
-#contenedor #logo {
-	background-image: url(imagenes/logo.png);
-	
-}
+
 #apDiv1 {
 	position: absolute;
 	width: 678px;
@@ -57,22 +56,34 @@ background:#000;
 	top: 1194px;
 }
 
+#contenedor #logo {
+	margin: 10%;
+
+	background-image: url(imagenes/logo.png);
+	
+}
+
 p {
 	text-justify: auto;
 }
 
 </style>
 </head>
-
 <body>
-	
+
 <div id="contenedor">
+	<?php include "mennu.php" ?>
 				<br>
 	<a></a>
 	<br>
 
   <div id="cabecera">
+	  <br>
+	  <br><br><br><br><br>
+
   <h1 align="center"><strong>Somos una Pizzeria con los mas altos estandares de calidad y sabor.</strong></h1>
+
+  <br><br><br>
   <p align="justify"><strong>Misiòn</strong>Somos una empresa argentina dedicada a satisfacer las necesidades de comida rápida
 	 y nutritiva actuales. Nuestras pizzas líderes, en el segmento, se destacan por su materia prima de primera
 	  calidad y su empaque práctico. Dentro de nuestros locales podrán disfrutar de la mejor calidad de servicio 
@@ -89,9 +100,6 @@ p {
 
 
   
-  <div id="logo"></div>
-  <div id="apDiv1"></div>
-  <div id="apDiv2"></div>
 
   
 </div>

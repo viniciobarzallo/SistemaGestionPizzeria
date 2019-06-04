@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <head>
+<meta charset="utf-8">
+<link href="css/indexestilos.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Inicio se Sesion</title>
 <link href="css/csssesion.css" rel="stylesheet" type="text/css">
 /<script src="jquery/jquery-3.3.1.js"></script>
 </head>
+
 <body class="body">
+
 <div id="contenedor">
+
 <h1> Iniciar sesión</h1>
 <hr align="center" size="10" style="color:#00F;" />
 <div id="formulario">
 <form action="verificarCuenta.php" method="post" id="form">
-<table width="565" height="279" border="0" align="center">
+<table width="565" height="479" border="0" align="center">
   <tr>
     <td width="196"><div align="left">Usuario:</div></td>
     <td width="316"><div align="center">
