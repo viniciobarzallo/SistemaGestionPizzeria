@@ -1,3 +1,7 @@
+Gestion de Pizzeria
+
+Es un sistema 
+
 # HTML, CSS, JavaScript, AJAX, PHP y MySQL
 Despues de seguir una estructura correcto con cada una de las etiquetas nuestra pagina realizada en HTML5 nos queda un buen resultado.
 
