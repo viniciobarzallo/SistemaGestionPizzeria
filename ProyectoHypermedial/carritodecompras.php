@@ -85,7 +85,7 @@
 		</table>
 	</div>
 	<div>
-		<a href="facturacion.php" style="width:100px;height:30px">Facturación</a>
+		<input type="button" style="width:100px;height:30px" value="Facturar" onclick="facturar();"/>
 		<h5>Costo de envio $5.00</h5>
 		<br/>
 		<a href="menu.php" onclick="facturar()">Ir a productos</a>
@@ -128,19 +128,23 @@
 		}
 		function facturar(){
 			var nfilas=($("#tabla tr").length)-2;
-			var ncolumnas=document.getElementById("tabla").row.length);
+			var ncolumnas=7;
 			var i=0;
+			var j=0;
 			var totalcantidad=0;
 			var totalprecio=0;
-			for(){
-				var id = document.getElementById("idpro"+$i).value;
-				var nombre = document.getElementById("npro"+$i).value;
-				var descripcion = document.getElementById("ppro"+$i).value;
-				var precio = document.getElementById("pre"+$i).value;
-				var imagen = document.getElementById("impro"+$i).value;
-				var cantidad = document.getElementById("can"+$i).value;
-				var total = document.getElementById("").value;
-			}
+
+			alert(nfilas+": "+ncolumnas);			
+
+			//var precio=document.getElementById(idpre).innerHTML;
+			//var idcan="can"+id;
+			//var can=document.getElementById(idcan).value;
+
+			//alert(precio);
+			//document.getElementById(total).innerHTML=precio*can;
+					<?php 
+						
+					?>
 		}
 	</script>
 </body>
