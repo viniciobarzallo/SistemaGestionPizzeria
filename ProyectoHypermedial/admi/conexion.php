@@ -4,9 +4,9 @@
 
  <?php
 $servername = "localhost";
-$username = "angel";
-$password = "root";
-$dbname = "tiendaonline";
+$username = "root";
+$password = "";
+$dbname = "gestion_pizza";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
