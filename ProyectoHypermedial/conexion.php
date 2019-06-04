@@ -6,7 +6,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+
 $dbname ="pizza";
+$dbname ="gestion_pizza";
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
