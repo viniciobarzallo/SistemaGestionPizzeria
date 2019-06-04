@@ -1,10 +1,9 @@
-Gestion de Pizzeria
+<h1>Sistema Gestión de Pizzeria</h1>
 
-Es un sistema 
+Se creara un sistema de gestion para una pizzeria, la cual podra registrar usuarios, tanto administrativos como los clientes, tendra suscursales y a su vez podra realizar el CRUD de usuarios, productos, pedidos y sucursales.
 
 # HTML, CSS, JavaScript, AJAX, PHP y MySQL
-Despues de seguir una estructura correcto con cada una de las etiquetas nuestra pagina realizada en HTML5 nos queda un buen resultado.
-
+Despues de seguir una estructura correcta con cada una de estas herramientas nuestra pagina web quedara lista para entrar en funcionamiento.
 
 <h1>Objectivo</h1>
 
