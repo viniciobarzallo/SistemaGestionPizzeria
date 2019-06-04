@@ -67,7 +67,7 @@
 <body>
 <div id="contenedor">
   <div id="encabezado">
-    <div id="logo"><img src="../imagenes/pizzaonline.png" width="222" height="128" alt="logo" /></div>
+    <div id="logo"><img src="logo.png" width="222" height="128" alt="logo" /></div>
   </div>
  /* class="fancybox fancybox.iframe"*/
   <a href="sesion.php"></a>
@@ -90,11 +90,11 @@
 </div>
 <div class="slider-wrapper theme-mi-slider">
 	<div id="slider" class="nivoSlider">     
-		    <img src="../imagenes/pizzaonline1.png" alt="" title="#htmlcaption1" />    
+		    <img src="imagenes/pizzaonline1.png" alt="" title="#htmlcaption1" />    
 		    <img src="imagenes/pizza1.png" alt="" title="#htmlcaption2" />   
 		    <img src="imagenes/pizza.png" alt="" title="#htmlcaption3" /> 
             <img src="../imagenes/pizzaonline2.png" alt="" title="#htmlcaption4" />    
-		    <img src="pizzaonline.png" alt="" title="#htmlcaption5" />     
+		    <img src="imagenes/pizza1.png" alt="" title="#htmlcaption5" />     
 	</div> 
 		<div id="htmlcaption1" class="nivo-html-caption">     
 	      <h1><b style="color:#F00">Bienvenidos a Pizza y sabor</b></h1>
