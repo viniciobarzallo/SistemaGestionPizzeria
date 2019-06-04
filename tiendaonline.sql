@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2019 a las 21:50:53
+-- Tiempo de generación: 04-06-2019 a las 22:15:59
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.1.28
 
@@ -232,12 +232,12 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `nombre`, `imagen`, `descripcion`, `precio`, `Categoria_idCategoria`) VALUES
-(3, 'chaulafan', 'chaulafan.jpg', 'Ricos y sabrosoz unicos en el mundo', '10', 1),
-(4, 'churrasco', 'churrasco.jpg', 'Ricos y sabrosoz unicos en el mundo', '5', 1),
-(5, 'Cuy', 'cuy.jpg', 'dfghjk,mgfdghjk', '23', 1),
-(6, 'cuysito', '879667_cuysito.jpg', 'dhggh sdhshjdshjd', '45', 1),
-(7, 'cop', 'cop.jpg', 'copapap', '23', 1),
-(8, 'pizza', 'Diagrama1.jpeg', 'con papas', '1', 4);
+(3, 'pizza1', 'pizza1.jpg', 'Ricos y sabrosoz unicos en el mundo', '10', 1),
+(4, 'pizza pepe', 'pizza2.jpg', 'Ricos y sabrosoz unicos en el mundo', '5', 1),
+(5, 'pizza con cuy', 'pizza3.jpg', 'dfghjk,mgfdghjk', '23', 1),
+(6, 'pizza espcial', 'pizza4.jpg', 'dhggh sdhshjdshjd', '45', 1),
+(7, 'pizza con cola', 'pizza5.jpg', 'copapap', '23', 1),
+(8, 'pizza', 'pizza6.jpeg', 'con papas', '1', 4);
 
 -- --------------------------------------------------------
 

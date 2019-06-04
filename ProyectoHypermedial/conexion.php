@@ -6,7 +6,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname ="pizza";
+$dbname ="tiendaonline";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 //echo "Conexion exitosa";
